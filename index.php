@@ -6,15 +6,20 @@
         public $image ;
         public $title ;
         public $price ;
-        public $icon ;
         public $type ;
+    }
 
+
+    class Category {
+        public $name;
+        public $icon ;
 
     }
 
 
 
-
+    $category = new Category();
+    
 
 
 ?>
