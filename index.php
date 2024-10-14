@@ -1,12 +1,25 @@
 <?php
 
     class Product {
-        
-        public $category ;
-        public $image ;
         public $title ;
         public $price ;
-        public $type ;
+        public $img ;
+        protected $category ;
+
+        function  __construct(string $title, float $price,string $img ,Category $category){
+            $this->title = $title;
+            $this->price = $price;
+            $this->img = $img;
+            $this->setCategory($category);
+        }
+
+        public function getCategory() {
+            return $this->category;
+        }
+
+        public function setCategory(Category $category){
+            $this->category = $category;
+        }
     }
 
 
@@ -14,12 +27,34 @@
         public $name;
         public $icon ;
 
+
+        function  __construct(string $name,string $icon){
+            $this->name = $name;
+            $this->icon = $icon;
+
+        }
+
+
     }
 
 
 
-    $category = new Category();
-    
+    $cani = new Category(1234 , '=)');
+    var_dump($cani);
+
+    $gatti = new Category('Gatti' , '=)');
+    var_dump($gatti);
+
+    $prodottiPerGatti = new Product(
+        'prodotto',
+         15.99,
+         'img',
+         $gatti
+        );
+    var_dump($prodottiPerGatti);
+
+
+
 
 
 ?>
