@@ -72,14 +72,14 @@
 
     $prodottoPerGatti = new Product (
         'Prodotto per gatti',
-         5.99,
+         5.998888888,
          'https://www.centroveterinariosanfilippo.it/images/gatto.jpg',
          $gatti
         );
     
     $prodottoPerCani = new Product (
         'Prodotto per cani',
-         3.99,
+         3000888888.99,
          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8a_k7NdbDzZaO8-0Wjma777GsQk_rPPb5UA&s',
          $cani
         );
@@ -167,11 +167,18 @@
                             <div class="card">
                             <img src="  <?php echo $product->img ?>" class="card-img-top" alt="<?php echo $product->title ?>">
                                 <div class="card-body">
-                                  <?php echo $product->title ?>
-                                  <?php echo $product->price ?>
-                                
-
-
+                                    <h2>
+                                       <?php echo $product->title ?>
+                                    </h2>
+                                   
+                                    <h6>
+                                       <?php echo $product->category->name ?>
+                                       <?php echo $product->category->icon ?>
+                                    </h6>
+                                    <h5>
+                                        € <?php echo number_format($product->price, 2, ',', '.') ?>
+                                    </h5>
+                                 
                                 </div>
                             </div>
                         </div>
