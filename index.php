@@ -164,8 +164,8 @@
                             foreach ($products as $product) {
                         ?>
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="card">
-                            <img src="  <?php echo $product->img ?>" class="card-img-top" alt="<?php echo $product->title ?>">
+                            <div class="card" >
+                            <img  src="  <?php echo $product->img ?>" class="card-img-top" alt="<?php echo $product->title ?>" >
                                 <div class="card-body">
                                     <h2>
                                        <?php echo $product->title ?>
@@ -178,7 +178,10 @@
                                     <h5>
                                         € <?php echo number_format($product->price, 2, ',', '.') ?>
                                     </h5>
-                                 
+
+                                    <h5>
+                                        Product type : <?php echo get_class($product); ?>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
@@ -188,5 +191,6 @@
                     </div>
                </div>
             </main>
+         
     </body>
 </html>
