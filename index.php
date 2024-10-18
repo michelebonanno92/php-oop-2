@@ -30,16 +30,19 @@
             return $this->color;
         }
 
-        public function setColor(string $color){
-           if(strlen($color) >= 3) {
-            $this->color = $color;
-           } 
-            else{
-                throw new Exception('Inserire almeno 3 caratteri , grazie...!!!');
-            }
-
-        }
+         public function setColor(string $color){
+                if(strlen($color) >= 3) {
+                 $this->color = $color;
+                } 
+                 else{
+                     throw new Exception('Inserire almeno 3 caratteri , grazie...!!!');
+                 }
+     
+         }
+      
     }
+    
+
 
     class Category {
         use Color;
@@ -92,7 +95,7 @@
 
     $cani = new Category('Rosso','Cani','🐶');
 
-    $gatti = new Category('Bl','Gatti','🐱');
+    $gatti = new Category('Blu','Gatti','🐱');
 
     $prodottoPerGatti = new Product (
         'Prodotto per gatti',
