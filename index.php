@@ -22,34 +22,40 @@
         }
     };
 
-    trait Name {
+    trait Color {
 
-        public $name;
-        public function getName() {
-            return $this->name;
+        public $color;
+        
+        public function getColor() {
+            return $this->color;
         }
 
-        public function setName(string $name){
-           if(strlen($name) >= 4) {
-            $this->name = $name;
+        public function setColor(string $color){
+           if(strlen($color) >= 3) {
+            $this->color = $color;
            } 
             else{
-                $this->name = null;
+                $this->color = null;
             }
 
         }
     }
 
     class Category {
+        use Color;
         public $name;
-        public $icon ;
+        public $icon;
 
-        function  __construct(string $name,string $icon){
+        function  __construct(string $color,string $name,string $icon){
+            $this->color = $color ;
             $this->name = $name;
             $this->icon = $icon;
 
         }
     };
+
+    // $prova = new Category() ;
+    // var_dump($prova);
 
     class Food extends Product {
 
@@ -84,9 +90,9 @@
         }
     };
 
-    $cani = new Category('Cani','🐶');
+    $cani = new Category('Rosso','Cani','🐶');
 
-    $gatti = new Category('Gatti','🐱');
+    $gatti = new Category('Blu','Gatti','🐱');
 
     $prodottoPerGatti = new Product (
         'Prodotto per gatti',
@@ -192,6 +198,7 @@
                                     <h6>
                                        <?php echo $product->category->name ?>
                                        <?php echo $product->category->icon ?>
+                                       <?php echo $product->category->color ?>
                                     </h6>
                                     <h5>
                                         € <?php echo number_format($product->price, 2, ',', '.') ?>
