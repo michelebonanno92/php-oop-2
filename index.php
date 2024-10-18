@@ -35,7 +35,7 @@
             $this->color = $color;
            } 
             else{
-                $this->color = null;
+                throw new Exception('Inserire almeno 3 caratteri , grazie...!!!');
             }
 
         }
@@ -47,7 +47,7 @@
         public $icon;
 
         function  __construct(string $color,string $name,string $icon){
-            $this->color = $color ;
+            $this->setColor($color)  ;
             $this->name = $name;
             $this->icon = $icon;
 
@@ -92,7 +92,7 @@
 
     $cani = new Category('Rosso','Cani','🐶');
 
-    $gatti = new Category('Blu','Gatti','🐱');
+    $gatti = new Category('Bl','Gatti','🐱');
 
     $prodottoPerGatti = new Product (
         'Prodotto per gatti',
