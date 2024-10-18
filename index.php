@@ -22,6 +22,24 @@
         }
     };
 
+    trait Name {
+
+        public $name;
+        public function getName() {
+            return $this->name;
+        }
+
+        public function setName(string $name){
+           if(strlen($name) >= 4) {
+            $this->name = $name;
+           } 
+            else{
+                $this->name = null;
+            }
+
+        }
+    }
+
     class Category {
         public $name;
         public $icon ;
